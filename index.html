@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antarctic Leadership Index</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="brand" href="index.html">Antarctic Leadership Index</a>
+  <ul>
+    <li><a class="nav-link" href="index.html">Overview</a></li>
+    <li><a class="nav-link" href="structural.html">Structural</a></li>
+    <li><a class="nav-link" href="brokering.html">Brokering</a></li>
+    <li><a class="nav-link" href="intellectual.html">Intellectual</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="page-header">
+    <span class="eyebrow">Measuring Antarctic governance</span>
+    <h1>Who leads in Antarctica?</h1>
+    <p>Twelve metrics, grouped into three leadership styles, measure each
+      country's contribution to Antarctic governance. Explore each category
+      to see how countries rank on individual metrics.</p>
+  </div>
+
+  <div class="category-cards">
+    <a class="category-card structural" href="structural.html">
+      <div class="swatch"></div>
+      <h3>Structural</h3>
+      <p>The resources a country brings — stations, vessels, voice, follow-through.</p>
+      <div class="count">4 metrics</div>
+    </a>
+    <a class="category-card brokering" href="brokering.html">
+      <div class="swatch"></div>
+      <h3>Brokering</h3>
+      <p>A country's position between other Parties — connection and coordination.</p>
+      <div class="count">2 metrics</div>
+    </a>
+    <a class="category-card intellectual" href="intellectual.html">
+      <div class="swatch"></div>
+      <h3>Intellectual</h3>
+      <p>The ideas a country contributes — proposals, research, and new rules.</p>
+      <div class="count">6 metrics</div>
+    </a>
+  </div>
+
+  <div class="section-label">Leadership style</div>
+  <div class="ternary-wrap">
+    <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg">
+      <!-- Triangle -->
+      <polygon points="360,30 660,380 60,380" fill="#faf9f6" stroke="#ddd8cc" stroke-width="1.5"/>
+
+      <!-- Corner labels -->
+      <text x="360" y="20" text-anchor="middle" font-family="Fraunces, serif" font-size="17" fill="#b8461f">Intellectual</text>
+      <text x="60" y="405" text-anchor="middle" font-family="Fraunces, serif" font-size="17" fill="#24467a">Structural</text>
+      <text x="660" y="405" text-anchor="middle" font-family="Fraunces, serif" font-size="17" fill="#6f8a1f">Brokering</text>
+
+      <!-- Placeholder points -->
+      <g font-family="Inter, sans-serif" font-size="12" fill="#55524a">
+        <circle cx="360" cy="140" r="5" fill="#1b1b1b"/>
+        <text x="372" y="144">Country A</text>
+
+        <circle cx="300" cy="230" r="5" fill="#1b1b1b"/>
+        <text x="312" y="234">Country B</text>
+
+        <circle cx="430" cy="260" r="5" fill="#1b1b1b"/>
+        <text x="442" y="264">Country C</text>
+
+        <circle cx="250" cy="330" r="5" fill="#1b1b1b"/>
+        <text x="262" y="334">Country D</text>
+
+        <circle cx="480" cy="320" r="5" fill="#1b1b1b"/>
+        <text x="492" y="324">Country E</text>
+      </g>
+    </svg>
+    <div class="caption" style="font-size:0.8rem;color:var(--ink-soft);margin-top:12px;">
+      Placeholder positions — plot your countries by relative strength in each leadership style.
+    </div>
+  </div>
+
+  <div class="section-label">Overall ranking</div>
+  <table class="ranking">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Country</th>
+        <th>Structural</th>
+        <th>Brokering</th>
+        <th>Intellectual</th>
+      </tr>
+    </thead>
+    <tbody id="ranking-body">
+      <!-- Replace with your own ranked rows -->
+    </tbody>
+  </table>
+</main>
+
+<footer class="site-footer">Antarctic Leadership Index — placeholder build</footer>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script>
+  // Fill the overall ranking table from the placeholder party list.
+  document.getElementById("ranking-body").innerHTML = PLACEHOLDER_PARTIES
+    .map(
+      (party, i) => `
+      <tr>
+        <td class="rank">${i + 1}</td>
+        <td>${party}</td>
+        <td>—</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>`
+    )
+    .join("");
+</script>
+</body>
+</html>
