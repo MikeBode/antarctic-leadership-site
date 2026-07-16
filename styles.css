@@ -86,6 +86,13 @@ a { color: inherit; }
 /* ---------- Page shell ---------- */
 main { max-width: 1180px; margin: 0 auto; padding: 48px 40px 90px; }
 
+/* Category sub-pages get a wider shell so the figure panel has more room. */
+body.cat-structural main,
+body.cat-brokering main,
+body.cat-intellectual main {
+  max-width: 1440px;
+}
+
 .page-header { max-width: 760px; margin-bottom: 20px; }
 .page-header .eyebrow {
   display: inline-block;
@@ -182,6 +189,12 @@ table.ranking td.rank { font-family: 'Fraunces', serif; font-size: 1rem; }
   align-items: start;
 }
 
+.metric-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
 .metric-list {
   list-style: none;
   margin: 0;
@@ -238,19 +251,11 @@ table.ranking td.rank { font-family: 'Fraunces', serif; font-size: 1rem; }
 .metric-panel h2 { font-size: 1.6rem; margin-bottom: 10px; }
 .metric-panel .blurb { color: var(--ink-soft); max-width: 60ch; margin-bottom: 28px; }
 
-.metric-body {
-  display: flex;
-  align-items: flex-start;
-  gap: 28px;
-}
-
 .chart-frame {
   border: 1px dashed var(--rule);
   border-radius: 10px;
   padding: 18px;
   background: #faf9f6;
-  flex: 2 1 0;
-  min-width: 0;
   min-height: 320px;
   display: flex;
   flex-direction: column;
@@ -258,7 +263,7 @@ table.ranking td.rank { font-family: 'Fraunces', serif; font-size: 1rem; }
 }
 .chart-frame img {
   width: 100%;
-  height: 440px;
+  height: 520px;
   object-fit: contain;
   display: block;
   border-radius: 4px;
@@ -273,8 +278,6 @@ table.top-ten {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.92rem;
-  flex: 1 1 0;
-  min-width: 0;
 }
 table.top-ten th, table.top-ten td {
   text-align: left;
@@ -291,6 +294,9 @@ table.top-ten th {
 table.top-ten td.rank { color: var(--accent); font-weight: 600; width: 2em; }
 table.top-ten tr:last-child td { border-bottom: none; }
 
+.metric-table-wrap.is-fading { opacity: 0; transition: opacity 0.22s ease; }
+.metric-table-wrap.is-visible { opacity: 1; transition: opacity 0.28s ease; }
+
 footer.site-footer {
   text-align: center;
   padding: 30px;
@@ -304,5 +310,4 @@ footer.site-footer {
   .category-cards { grid-template-columns: 1fr; }
   main { padding: 32px 20px 70px; }
   .site-nav { padding: 16px 20px; }
-  .metric-body { flex-direction: column; }
 }

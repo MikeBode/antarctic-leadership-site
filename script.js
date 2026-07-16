@@ -15,8 +15,22 @@ function renderCategoryPage(category) {
   const metrics = METRICS.filter((m) => m.category === category);
   const listEl = document.getElementById("metric-list");
   const panel = document.getElementById("metric-panel");
+  const tableWrap = document.getElementById("metric-table");
 
   function panelHTML(metric) {
+    return `
+      <div class="metric-eyebrow">${CATEGORY_INFO[category].label}</div>
+      <h2>${metric.number}. ${metric.title}</h2>
+      <p class="blurb">${metric.blurb}</p>
+      <div class="chart-frame">
+        <img src="${metric.image}" alt="${metric.title} chart"
+             onerror="this.onerror=null;this.src='assets/images/placeholder.svg';">
+        <div class="caption">Figure — ${metric.figureCaption}</div>
+      </div>
+    `;
+  }
+
+  function tableHTML(metric) {
     const rows = metric.topTen
       .map(
         (row) => `
@@ -29,22 +43,12 @@ function renderCategoryPage(category) {
       .join("");
 
     return `
-      <div class="metric-eyebrow">${CATEGORY_INFO[category].label}</div>
-      <h2>${metric.number}. ${metric.title}</h2>
-      <p class="blurb">${metric.blurb}</p>
-      <div class="metric-body">
-        <div class="chart-frame">
-          <img src="${metric.image}" alt="${metric.title} chart"
-               onerror="this.onerror=null;this.src='assets/images/placeholder.svg';">
-          <div class="caption">Figure — ${metric.figureCaption}</div>
-        </div>
-        <table class="top-ten">
-          <thead>
-            <tr><th>Rank</th><th>Party</th><th>Score</th></tr>
-          </thead>
-          <tbody>${rows}</tbody>
-        </table>
-      </div>
+      <table class="top-ten">
+        <thead>
+          <tr><th>Rank</th><th>Party</th><th>Score</th></tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
     `;
   }
 
@@ -61,16 +65,22 @@ function renderCategoryPage(category) {
 
     if (!animate) {
       panel.innerHTML = panelHTML(metric);
+      tableWrap.innerHTML = tableHTML(metric);
       return;
     }
 
     panel.classList.remove("is-visible");
     panel.classList.add("is-fading");
+    tableWrap.classList.remove("is-visible");
+    tableWrap.classList.add("is-fading");
 
     window.setTimeout(() => {
       panel.innerHTML = panelHTML(metric);
+      tableWrap.innerHTML = tableHTML(metric);
       panel.classList.remove("is-fading");
       panel.classList.add("is-visible");
+      tableWrap.classList.remove("is-fading");
+      tableWrap.classList.add("is-visible");
     }, 220);
   }
 
@@ -96,4 +106,5 @@ function renderCategoryPage(category) {
   // Show the first metric on load (no fade-in needed the first time).
   showMetric(metrics[0].slug, { animate: false });
   panel.classList.add("is-visible");
+  tableWrap.classList.add("is-visible");
 }
