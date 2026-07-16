@@ -36,7 +36,7 @@ function renderCategoryPage(category) {
         <div class="chart-frame">
           <img src="${metric.image}" alt="${metric.title} chart"
                onerror="this.onerror=null;this.src='assets/images/placeholder.svg';">
-          <div class="caption">Figure — replace assets/images/${metric.slug}.png with your own chart.</div>
+          <div class="caption">Figure — ${metric.figureCaption}</div>
         </div>
         <table class="top-ten">
           <thead>

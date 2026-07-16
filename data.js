@@ -48,6 +48,7 @@ const METRICS = [
     title: "Infrastructure investment",
     blurb: "Station capacity and vessel capacity, as a tangible measure of a country's presence on the continent.",
     image: "assets/images/infrastructure-investment.svg",
+    figureCaption: "Each Consultative Party's station capacity plotted against its vessel capacity, on logarithmic axes.",
     topTen: [
       { rank: 1, party: "Argentina", score: 524.75 },
       { rank: 2, party: "Chile", score: 359.75 },
@@ -68,6 +69,7 @@ const METRICS = [
     title: "Outspokenness at ATCMs",
     blurb: "How often a country intervenes during Antarctic Treaty Consultative Meetings.",
     image: "assets/images/outspokenness.svg",
+    figureCaption: "Each Consultative Party's yearly count of ATCM interventions from 2000 to 2023, ranked by total.",
     topTen: [
       { rank: 1, party: "United Kingdom", score: 1922 },
       { rank: 2, party: "Australia", score: 1751 },
@@ -88,6 +90,7 @@ const METRICS = [
     title: "Ratification speed",
     blurb: "Average time between a Measure passing and a country ratifying it.",
     image: "assets/images/ratification-speed.svg",
+    figureCaption: "Consultative Parties ranked by their average delay, in years, between a Measure passing and their ratifying it.",
   },
   {
     slug: "influence-atcms",
@@ -96,6 +99,7 @@ const METRICS = [
     title: "Influence on other Parties at ATCMs",
     blurb: "How often a country is mentioned by other Parties in ATCM Final Reports.",
     image: "assets/images/influence-atcms.svg",
+    figureCaption: "Each Consultative Party, scaled by how often it is mentioned by other Parties in ATCM Final Reports.",
     topTen: [
       { rank: 1, party: "Australia", score: 3824 },
       { rank: 2, party: "United Kingdom", score: 2800 },
@@ -118,6 +122,7 @@ const METRICS = [
     title: "Position in the network of Consultative Parties",
     blurb: "How central a country sits within the network of inter-Party collaboration.",
     image: "assets/images/network-position.svg",
+    figureCaption: "Consultative Parties positioned by their co-authorship ties, with size reflecting how connected each country is.",
   },
   {
     slug: "coauthorship-working-papers",
@@ -126,6 +131,7 @@ const METRICS = [
     title: "Co-authorship of Working Papers",
     blurb: "How often a country co-signs Working Papers led by other Parties.",
     image: "assets/images/coauthorship-working-papers.svg",
+    figureCaption: "The number of Working Papers each Consultative Party co-authored at each Antarctic Treaty Consultative Meeting over time.",
   },
 
   // --- Intellectual ----------------------------------------------------
@@ -136,6 +142,7 @@ const METRICS = [
     title: "Introducing new ideas to ATCMs",
     blurb: "New topics first substantively raised in a Working Paper, attributed to their authoring Party.",
     image: "assets/images/new-ideas.svg",
+    figureCaption: "The number of new topics first substantively raised in Working Papers each year from 1961 to 2023.",
     topTen: [
       { rank: 1, party: "United Kingdom", score: 25.45 },
       { rank: 2, party: "Australia", score: 15.53 },
@@ -156,6 +163,7 @@ const METRICS = [
     title: "Submission of Information Papers to ATCMs",
     blurb: "Research and findings a Party brings directly into the policy discussion.",
     image: "assets/images/information-papers.svg",
+    figureCaption: "The number of Information Papers each Consultative Party submitted at each Antarctic Treaty Consultative Meeting over time.",
     topTen: [
       { rank: 1, party: "Australia", score: 189.71 },
       { rank: 2, party: "Chile", score: 169.02 },
@@ -176,6 +184,7 @@ const METRICS = [
     title: "Lead authorship of Working Papers",
     blurb: "Which Party is most often the primary driver behind a proposal.",
     image: "assets/images/lead-authorship.svg",
+    figureCaption: "The number of Working Papers each Consultative Party led as first author at each Antarctic Treaty Consultative Meeting over time.",
     topTen: [
       { rank: 1, party: "United Kingdom", score: 191.63 },
       { rank: 2, party: "United States", score: 139.94 },
@@ -196,6 +205,7 @@ const METRICS = [
     title: "Contributing ideas to new Antarctic Treaty Measures",
     blurb: "Share of content in ratified Measures traceable back to a Party's earlier Working Papers.",
     image: "assets/images/measures-contribution.svg",
+    figureCaption: "Consultative Parties ranked by their estimated share of content in ratified Antarctic Treaty Measures.",
   },
   {
     slug: "journal-articles",
@@ -204,6 +214,7 @@ const METRICS = [
     title: "Publication of peer-reviewed journal articles",
     blurb: "Q1-journal Antarctic research output with a Consultative Party affiliation.",
     image: "assets/images/journal-articles.svg",
+    figureCaption: "Each Consultative Party, scaled by its number of Q1 peer-reviewed Antarctic research publications.",
   },
   {
     slug: "scar-contributions",
@@ -212,6 +223,7 @@ const METRICS = [
     title: "Contributions to SCAR",
     blurb: "Leadership roles held within the Scientific Committee on Antarctic Research.",
     image: "assets/images/scar-contributions.svg",
+    figureCaption: "The number of SCAR leadership roles held by each Consultative Party in each year from 2000 to 2024.",
   },
 ];
 
